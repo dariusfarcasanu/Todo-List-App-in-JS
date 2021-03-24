@@ -1,3 +1,10 @@
+:root {
+  --bg-color-one: #acb6e5;
+  --bg-color-two: #86fde8;
+  --btn-color: #d2abeb;
+  --radius-num: 8px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,7 +14,11 @@
 body {
   font-family: 'Poppins', sans-serif;
   min-height: 100vh;
-  background-image: linear-gradient(100deg, #f8a1a1, #81e7c4);
+  background-image: linear-gradient(
+    100deg,
+    var(--bg-color-one),
+    var(--bg-color-two)
+  );
 }
 
 header {
@@ -32,7 +43,7 @@ form button {
 }
 
 form button {
-  color: #f8a1a1;
+  color: var(--btn-color);
   background: white;
   cursor: pointer;
   transition: all 0.3 ease;
@@ -63,6 +74,9 @@ form button i:hover {
   justify-content: space-between;
   align-items: center;
   transition: all 0.6s ease;
+  overflow: hidden;
+  border-radius: var(--radius-num) var(--radius-num) var(--radius-num)
+    var(--radius-num);
 }
 
 .todo li {
@@ -71,8 +85,9 @@ form button i:hover {
 
 .trash-btn,
 .complete-btn {
-  background: #dddddd;
+  background: #f6f5f5;
   border: none;
+  outline: none;
   padding: 0.8rem;
   cursor: pointer;
   font-size: 1.2rem;
@@ -80,21 +95,24 @@ form button i:hover {
 }
 
 .trash-btn {
-  color: red;
+  color: #fa1e0e;
+  overflow: hidden;
 }
 
 .complete-btn {
-  color: green;
-}
-
-.complete-btn-after,
-.trash-btn-after {
-  color: black;
-  cursor: default;
+  color: #9ede73;
 }
 
 .todo-item {
   padding: 0rem 0.5rem;
+}
+
+.todo-input {
+  border-radius: var(--radius-num) 0 0 var(--radius-num);
+}
+
+.todo-button {
+  border-radius: 0 var(--radius-num) var(--radius-num) 0;
 }
 
 .fa-trash,
@@ -130,12 +148,14 @@ select {
   width: 10rem;
   cursor: pointer;
   padding: 0.73rem;
+  overflow: hidden;
+  border-radius: var(--radius-num) 0 0 var(--radius-num);
 }
 
 .select::after {
   content: '\25BC';
   position: absolute;
-  background: #f8a1a1;
+  background: var(--btn-color);
   top: -7px;
   right: 0;
   padding: 1rem;
@@ -144,5 +164,5 @@ select {
 
 .select:hover::after {
   background: white;
-  color: #f8a1a1;
+  color: var(--btn-color);
 }
