@@ -18,7 +18,6 @@ body {
 
 header {
   font-size: 1.4rem;
-  color: #fff;
 }
 
 header,
@@ -46,6 +45,7 @@ form button {
 }
 
 form button i:hover {
+  color: #37d19b;
   transform: scale(1.1);
 }
 
